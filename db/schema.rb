@@ -10,14 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_165424) do
+ActiveRecord::Schema.define(version: 2020_03_04_221540) do
 
   create_table "comments", force: :cascade do |t|
     t.string "game_title"
-    t.string "comment"
+    t.string "comment_text"
     t.string "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "developers", force: :cascade do |t|
+    t.string "name"
+    t.string "game_name"
   end
 
   create_table "games", force: :cascade do |t|
@@ -29,17 +34,16 @@ ActiveRecord::Schema.define(version: 2020_02_25_165424) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "genre_games", force: :cascade do |t|
-    t.string "game"
-    t.string "genre"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "genres", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.string "game"
+    t.decimal "critic_score"
+    t.decimal "user_score"
   end
 
 end

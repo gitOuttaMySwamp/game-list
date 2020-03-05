@@ -26,5 +26,27 @@ require_relative '../ar.rb'
 #   comment.save
 #   puts "#{comment.game_title} saved"
 # end
+# puts "Created #{Comment.count} Comments."
 
-puts "Created #{Comment.count} Comments."
+# Developer.destroy_all
+# d_csv = File.read(Rails.root.join('lib', 'seeds', 'vgsales-12-4-2019-short.csv'))
+# dev_csv = CSV.parse(d_csv, headers: true, encoding: 'ISO-8859-1')
+# dev_csv.each do |row|
+#   developer = Developer.new
+#   developer.name = row['Developer']
+#   developer.game_name = row['Name']
+#   developer.save
+# end
+# puts "Created #{Developer.count} Developers."
+
+# Rating.destroy_all
+# r_csv = File.read(Rails.root.join('lib', 'seeds', 'vgsales-12-4-2019-short.csv'))
+# rat_csv = CSV.parse(r_csv, headers: true, encoding: 'ISO-8859-1')
+# rat_csv.each do |row|
+#   rating = Rating.new
+#   rating.game = row['Name']
+#   rating.critic_score = row['Critic_Score']
+#   rating.user_score = row['User_Score']
+#   rating.save
+# end
+# puts "Created #{Rating.count} Ratings."
